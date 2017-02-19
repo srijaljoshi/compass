@@ -1,0 +1,19 @@
+---
+# blog page must be named index.html and in its own folder to support pagination
+# https://jekyllrb.com/docs/pagination/
+layout: post
+title: "Blog"
+---
+<section class="list">
+
+  {% for post in site.posts %}
+    <div class="">
+      <a class="url" href="{{ site.url }}{{ post.url }}">
+        <h3 class="title">{{ post.title }}</h3> 
+        <small>on <time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time>
+        </small>
+      </a>
+    </div>
+
+  {% endfor %}
+</section>
